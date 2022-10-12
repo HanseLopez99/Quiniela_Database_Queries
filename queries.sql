@@ -25,3 +25,7 @@ FROM boards b
 INNER JOIN games g on b.games_id = g.id
 INNER JOIN users u on b.users_id = u.id
 ORDER BY b.created_at ASC;
+
+-- Scoreboard
+SELECT first_name as "Player", points as "Points" FROM users
+ORDER BY points DESC;
