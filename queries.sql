@@ -11,3 +11,10 @@ INNER JOIN teams t1 on t1.id = g.team1_id
 INNER JOIN teams t2 on t2.id = g.team2_id 
 INNER JOIN phases p on p.id = g.phases_id 
 ORDER BY g.created_at ASC;
+
+-- Build title of the game
+SELECT concat(t1."name", ' vs ', t2."name") as "Title"
+FROM games g 
+INNER JOIN teams t1 on t1.id = g.team1_id 
+INNER JOIN teams t2 on t2.id = g.team2_id
+ORDER BY g.created_at ASC
