@@ -18,3 +18,10 @@ FROM games g
 INNER JOIN teams t1 on t1.id = g.team1_id 
 INNER JOIN teams t2 on t2.id = g.team2_id
 ORDER BY g.created_at ASC
+
+-- Boards view
+SELECT g.title as "Game", u.first_name as "User", b.score1 as "Score 1", b.score2 as "Score 2"
+FROM boards b
+INNER JOIN games g on b.games_id = g.id
+INNER JOIN users u on b.users_id = u.id
+ORDER BY b.created_at ASC;
